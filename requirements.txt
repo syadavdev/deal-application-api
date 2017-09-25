@@ -1,0 +1,11 @@
+flask==0.11.1
+flask-restplus==0.10.1
+pyjwt==1.4.2
+jsonify==0.5
+pymemcache==1.4.0
+python-dateutil==2.5.3
+requests==2.11.1
+flask_testing==0.6.2
+nose2==0.6.5
+flask-sqlalchemy==2.2
+pymysql==0.7.11
