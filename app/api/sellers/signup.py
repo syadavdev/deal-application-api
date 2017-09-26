@@ -1,10 +1,13 @@
+import logging
+
 from flask import request
 from flask_restplus import Resource
-from app.api.serializers.sellers import *
-from app.api.constants import *
-from app.api.sellers.models.seller import Seller
+
 from app.api.business.seller_check import verify_signup
-import logging
+from app.api.constants import *
+from app.api.models.seller import Seller
+from app.api.serializers.sellers import *
+
 log = logging.getLogger(__name__)
 
 ns = api.namespace('sellers', description='seller login operations')

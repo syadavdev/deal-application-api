@@ -1,8 +1,10 @@
+import logging
+
 from sqlalchemy import *
 
 from app import db
-from app.api.sellers.models.seller import Seller
-import logging
+from app.api.models.seller import Seller
+
 log = logging.getLogger(__name__)
 
 

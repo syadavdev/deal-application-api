@@ -1,10 +1,10 @@
 from flask import request
 from flask_restplus import Resource
 
-from app.api.constants import *
-from app.api.customers.models.customer import Customer
-from app.api.serializers.customers import *
 from app.api.business.customer_check import verify_signup
+from app.api.constants import *
+from app.api.models.customer import Customer
+from app.api.serializers.customers import *
 
 ns = api.namespace('customers', description='Users related operations')
 

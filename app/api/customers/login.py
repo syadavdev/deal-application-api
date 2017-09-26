@@ -1,10 +1,9 @@
 from flask import request
 from flask_restplus import Resource
 
-from app.api.constants import *
-from app.api.customers.models.customer import Customer
-from app.api.serializers.customers import *
 from app.api.business.customer_check import verify_login
+from app.api.constants import *
+from app.api.serializers.customers import *
 
 ns = api.namespace('customers', description='Users related operations')
 
@@ -13,7 +12,7 @@ class Customers(Resource):
     """
     login customer
     """
-    @api.expect(signup_credentials)
+    @api.expect(login)
     def post(self):
         customer_details = request.get_json()
         if(verify_login(customer_details.get('phoneNumber'),customer_details.get('password'))):

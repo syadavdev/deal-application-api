@@ -10,6 +10,7 @@ from app.api.customers.signup import ns as customer_signup
 from app.api.customers.login import ns as customer_login
 from app.api.sellers.signup import ns as seller_signup
 from app.api.sellers.login import ns as seller_login
+from app.api.items.item import ns as items
 from app.api.restplus import api
 
 app = Flask(__name__,static_url_path="",instance_relative_config=False)
@@ -29,6 +30,7 @@ def initialize_app(app):
     api.add_namespace(customer_signup)
     api.add_namespace(seller_signup)
     api.add_namespace(seller_login)
+    api.add_namespace(items)
     app.register_blueprint(blueprint)
 
 @app.after_request
