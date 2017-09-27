@@ -13,9 +13,9 @@ log = logging.getLogger(__name__)
 ns = api.namespace('sellers', description='seller login operations')
 
 @ns.route(signup_uri)
-class Customers(Resource):
+class Signup(Resource):
     """
-    Signup customer
+    Seller Signup
     """
     @api.expect(credentials)
     def post(self):

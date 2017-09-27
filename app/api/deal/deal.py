@@ -2,17 +2,17 @@ from flask import request
 from flask_restplus import Resource
 
 from app.api.constants import *
-from app.api.serializers.item import *
-from app.api.models.item import Item
+from app.api.serializers.deal import *
+from app.api.models.deal import *
 
-ns = api.namespace('items', description='Item related operations')
+ns = api.namespace('deals', description='deal related operations')
 
-@ns.route(items_uri)
+@ns.route(deal_uri)
 class Item(Resource):
     """
     item details
     """
-    @api.expect(item_credentials)
+    @api.expect(deals)
     def post(self):
         item_details = request.get_json()
         item = Item(item_details.get('name'),

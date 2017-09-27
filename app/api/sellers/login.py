@@ -8,7 +8,7 @@ from app.api.serializers.sellers import *
 ns = api.namespace('sellers', description='seller login operations')
 
 @ns.route(login_uri)
-class Customers(Resource):
+class Login(Resource):
     """
     login customer
     """

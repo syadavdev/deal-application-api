@@ -11,6 +11,9 @@ from app.api.customers.login import ns as customer_login
 from app.api.sellers.signup import ns as seller_signup
 from app.api.sellers.login import ns as seller_login
 from app.api.items.item import ns as items
+from app.api.cart.cart import ns as cart
+from app.api.order.order import ns as order
+from app.api.deal.deal import ns as deal
 from app.api.restplus import api
 
 app = Flask(__name__,static_url_path="",instance_relative_config=False)
@@ -31,6 +34,8 @@ def initialize_app(app):
     api.add_namespace(seller_signup)
     api.add_namespace(seller_login)
     api.add_namespace(items)
+    api.add_namespace(cart)
+    api.add_namespace(order)
     app.register_blueprint(blueprint)
 
 @app.after_request

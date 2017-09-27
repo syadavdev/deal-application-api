@@ -1,4 +1,4 @@
-# User model in db
+# Customer model in db
 from app import db
 
 

@@ -10,7 +10,7 @@ ns = api.namespace('customers', description='Users related operations')
 
 
 @ns.route(signup_uri)
-class Customers(Resource):
+class Signup(Resource):
     """
     Signup customer
     """
