@@ -18,4 +18,4 @@ class Login(Resource):
         if(verify_login(customer_details.get('phoneNumber'),customer_details.get('password'))):
             return {'success': 'ok'}, HTTP_STATUS.OK
         else:
-            return {'Unauthorize access': 'error'}, HTTP_STATUS.BAD_REQUEST
+            return {'error': 'Unauthorize access'}, HTTP_STATUS.BAD_REQUEST
