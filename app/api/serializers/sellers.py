@@ -5,7 +5,9 @@ credentials = api.model('signup_credentials', {
     'sellerName': fields.String(required=True),
     'password': fields.String(required=True),
     'email': fields.String(required=True),
-    'phoneNumber':fields.String(required=True)
+    'phoneNumber':fields.String(required=True),
+    'storeName':fields.String(required=True),
+    'address':fields.String(required=True)
 })
 
 login = api.model('login', {

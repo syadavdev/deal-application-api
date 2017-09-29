@@ -8,7 +8,7 @@ from app.api.serializers.cart import *
 ns = api.namespace('cart', description='cart related operations')
 
 @ns.route(cart_uri)
-class Cart(Resource):
+class AddToCart(Resource):
     """
     Cart
     """
@@ -20,4 +20,4 @@ class Cart(Resource):
                     cart_details.get('quantity'),
                     cart_details.get('sellerId'))
         cart.create()
-        return {'OK', 'Item added to cart'}, HTTP_STATUS.OK
+        return {'Item added to cart', 'ok'}, HTTP_STATUS.OK

@@ -5,7 +5,9 @@ signup_credentials = api.model('customer_credentials', {
     'userName': fields.String(required=True),
     'password': fields.String(required=True),
     'email': fields.String(required=True),
-    'phoneNumber':fields.String(reaquired=True)
+    'phoneNumber':fields.String(required=True),
+    'shipping':fields.String(),
+    'billing':fields.String()
 })
 
 login = api.model('login', {

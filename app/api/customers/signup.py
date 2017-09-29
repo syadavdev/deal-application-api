@@ -22,7 +22,9 @@ class Signup(Resource):
             customer = Customer(customer_details.get('userName'),
                                 customer_details.get('password'),
                                 customer_details.get('email'),
-                                customer_details.get('phoneNumber'))
+                                customer_details.get('phoneNumber'),
+                                customer_details.get('shipping'),
+                                customer_details.get('billing'))
             customer.create()
             return {'Signup successfully': 'ok'}, HTTP_STATUS.OK
         else:

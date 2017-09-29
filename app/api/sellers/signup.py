@@ -21,9 +21,11 @@ class Signup(Resource):
     def post(self):
         seller_details = request.get_json()
         seller = Seller(seller_details.get('sellerName'),
-                          seller_details.get('password'),
-                          seller_details.get('email'),
-                          seller_details.get('phoneNumber'))
+                        seller_details.get('password'),
+                        seller_details.get('email'),
+                        seller_details.get('phoneNumber'),
+                        seller_details.get('storeName'),
+                        seller_details.get('address'))
         if(not verify_signup(seller.phone_number,seller.email)):
             log.info('Not found so creating one')
             seller.create()
