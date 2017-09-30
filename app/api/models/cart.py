@@ -11,13 +11,11 @@ class Cart(db.Model):
     customer_id = db.Column('customerId', db.Integer ,nullable=False);
     item_id = db.Column('itemId',db.Integer, nullable=False)
     quantity = db.Column('quantity',db.Integer, nullable=False)
-    seller_id = db.Column('seller_id',db.Integer, nullable=False)
 
-    def __init__(self, customer_id, item_id, quantity,seller_id):
+    def __init__(self, customer_id, item_id, quantity):
         self.customer_id = customer_id
         self.item_id = item_id
         self.quantity = quantity
-        self.seller_id = seller_id
 
     def create(self):
         db.session.add(self)

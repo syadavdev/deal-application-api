@@ -16,7 +16,7 @@ class AddItem(Resource):
     @api.expect(item_credentials)
     def post(self):
         item_details = request.get_json()
-        if(check_item(item_details.get('name'),item_details.get('sellerId'))):
+        if not check_item(item_details.get('name'),item_details.get('sellerId')):
             item = Item(item_details.get('name'),
                         item_details.get('price'),
                         item_details.get('sellerId'),
@@ -40,4 +40,4 @@ class GetItem(Resource):
         if(items_list['items'] != []):
             return items_list,HTTP_STATUS.OK
         else:
-            return {'error': 'No items in table'}, HTTP_STATUS.BAD_REQUEST
+            return {'error': 'Empty Item List'}, HTTP_STATUS.BAD_REQUEST
