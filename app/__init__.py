@@ -8,11 +8,12 @@ db = SQLAlchemy()
 
 from app.api.customers.signup import ns as customer_signup
 from app.api.customers.login import ns as customer_login
+from app.api.customers.update_customer import ns as customer_updation
 from app.api.sellers.signup import ns as seller_signup
 from app.api.sellers.login import ns as seller_login
 from app.api.items.item_list_ops import ns as items
 from app.api.cart.cart_operation import ns as cart
-from app.api.order.order import ns as order
+from app.api.order.create_order import ns as order
 from app.api.deal.deals_details import ns as deal
 from app.api.restplus import api
 
@@ -31,6 +32,7 @@ def initialize_app(app):
     api.init_app(blueprint)
     api.add_namespace(customer_login)
     api.add_namespace(customer_signup)
+    api.add_namespace(customer_updation)
     api.add_namespace(seller_signup)
     api.add_namespace(seller_login)
     api.add_namespace(items)

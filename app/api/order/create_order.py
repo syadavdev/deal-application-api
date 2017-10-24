@@ -6,8 +6,8 @@ from app.api.serializers.order import *
 
 ns = api.namespace('order', description='order operations')
 
-@ns.route(order_uri)
-class Order(Resource):
+@ns.route(create_order_uri)
+class CreateOrder(Resource):
     """
     Create Order
     """

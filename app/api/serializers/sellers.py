@@ -15,17 +15,20 @@ login = api.model('login', {
     'password': fields.String(readOnly=True)
 })
 
+update_seller = api.model('update_seller',{
+    'sellerName': fields.String(required=True),
+    'password': fields.String(required=True),
+    'email': fields.String(required=True),
+    'phoneNumber':fields.String(required=True),
+    'storeName':fields.String(required=True),
+    'address':fields.String(required=True)
+})
+
 new_seller = api.model('new_user', {
     'name': fields.String(required=True),
     'email': fields.String(required=True),
     'phone': fields.String(required=True),
     'roleId': fields.Integer(required=True)
-})
-
-update_user = api.model('update_user',{
-    'id': fields.Integer,
-    'roleId': fields.Integer,
-    'phone': fields.String
 })
 
 user_resp = api.inherit('user_resp', new_seller, {
