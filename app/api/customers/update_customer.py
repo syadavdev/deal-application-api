@@ -14,7 +14,7 @@ class UpdateCustomer(Resource):
     Update customer
     """
     @api.expect(update_customer)
-    def post(self):
+    def put(self):
         customer_details = request.get_json()
         id = customer_details.get('id')
         customer = Customer(customer_details.get('userName'),

@@ -8,6 +8,7 @@ from app.api.business.item_operation import get_items,check_item
 
 ns = api.namespace('items', description='Item related operations')
 
+
 @ns.route(items_add_uri)
 class AddItem(Resource):
     """
@@ -26,18 +27,3 @@ class AddItem(Resource):
             return {'success': 'ok'}, HTTP_STATUS.OK
         else:
             return {'Already in Cart','error'}
-
-
-@ns.route(items_list_uri)
-class GetItem(Resource):
-    """
-    Items list
-    """
-    @api.expect()
-    def get(self):
-        items_list = get_items();
-
-        if(items_list['items'] != []):
-            return items_list,HTTP_STATUS.OK
-        else:
-            return {'error': 'Empty Item List'}, HTTP_STATUS.BAD_REQUEST

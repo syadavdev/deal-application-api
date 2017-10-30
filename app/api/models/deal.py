@@ -7,7 +7,8 @@ class Deal(db.Model):
     __tablename__ = 'deal'
 
     # Columns
-    item_id = db.Column('itemId',db.Integer, primary_key=True,nullable=False)
+    id = db.Column('id',db.Integer, primary_key=True,nullable=False, autoincrement=True)
+    item_id = db.Column('itemId',db.Integer,nullable=False)
     description = db.Column('description',db.String(500),nullable=False)
     discount = db.Column('discount',db.Float,nullable=False)
 

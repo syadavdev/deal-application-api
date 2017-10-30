@@ -1,8 +1,12 @@
 from flask_restplus import fields
 from app.api.restplus import api
 
-deals = api.model('deals', {
-    'name': fields.String(required=True),
-    'price': fields.Float(required=True),
-    'sellerId': fields.Integer(required=True)
+add_deals = api.model('add_deals', {
+    'itemId': fields.Integer(required=True),
+    'description': fields.String(required=True),
+    'discount': fields.Float(required=True)
+})
+
+get_deals = api.model('get_deals', {
+    'itemId': fields.Integer(required=True)
 })

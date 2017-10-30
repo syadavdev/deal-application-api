@@ -6,6 +6,7 @@ from app import db
 
 log = logging.getLogger(__name__)
 
+
 def get_items():
     items_list = db.session.query(Item).order_by(desc(Item.item_id)).all();
 
@@ -20,10 +21,9 @@ def get_items():
         item_disc['desciption'] = item.description
         list_of_items.append(item_disc)
 
-    item_list_desc = {}
-    item_list_desc['items'] = list_of_items
-
+    item_list_desc = {'items' : list_of_items}
     return item_list_desc
+
 
 def check_item(name,seller_id):
     return db.session.query(exists().where((Item.item_name == name)
