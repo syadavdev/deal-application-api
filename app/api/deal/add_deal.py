@@ -4,6 +4,7 @@ from flask_restplus import Resource
 from app.api.constants import *
 from app.api.serializers.deal import *
 from app.api.models.deal import *
+from app.api.business.deal_operation import checking_deal
 
 ns = api.namespace('deals', description='deal related operations')
 
@@ -16,5 +17,12 @@ class AddDeal(Resource):
     @api.expect(add_deals)
     def post(self):
         deal_json = request.get_json()
+        deal = Deal(deal_json.get('itemId'),
+                    deal_json.get('description'),
+                    deal_json.get('discount'))
 
-        return {'success': 'ok'}, HTTP_STATUS.OK
+        if not checking_deal(deal.item_id):
+            deal.create();
+            return {'deal inserted successfully':'ok'},HTTP_STATUS.OK
+        else:
+            return {'Deal Already Exist On this item': 'error'}, HTTP_STATUS.BAD_REQUEST

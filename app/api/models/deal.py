@@ -4,7 +4,7 @@ from app import db
 
 class Deal(db.Model):
     # table
-    __tablename__ = 'deal'
+    __tablename__ = 'deals'
 
     # Columns
     id = db.Column('id',db.Integer, primary_key=True,nullable=False, autoincrement=True)
