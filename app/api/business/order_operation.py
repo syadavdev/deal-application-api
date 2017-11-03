@@ -33,6 +33,7 @@ def get_orders_list(customer_id):
         order_disc['quantity'] = order.quantity
         order_disc['totalPrice'] = order.total_price
         list_of_orders.append(order_disc)
+        order_disc = {}
 
     order_list_desc = {'orders': list_of_orders}
 

@@ -18,10 +18,11 @@ def get_items():
         item_disc['price'] = item.price
         item_disc['sellerId'] = item.seller_id
         item_disc['itemImage'] = item.item_image
-        item_disc['desciption'] = item.description
+        item_disc['description'] = item.description
         list_of_items.append(item_disc)
+        item_disc = {}
 
-    item_list_desc = {'items' : list_of_items}
+    item_list_desc = {'items': list_of_items}
     return item_list_desc
 
 

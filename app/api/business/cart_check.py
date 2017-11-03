@@ -17,6 +17,7 @@ def get_cart_items(customer_id):
         cart_item_disc['itemId'] = cart.item_id
         cart_item_disc['quanity'] = cart.quantity
         cart_items.append(cart_item_disc)
+        cart_item_disc = {}
 
     item_list_desc = {}
     item_list_desc['cartItems'] = cart_items
