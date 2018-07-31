@@ -5,3 +5,4 @@ instance/
 .idea/workspace.xml
 runserver.py
 test_token_generator.py
+*.pyc
